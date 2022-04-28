@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"myapp/data"
 	"myapp/handlers"
@@ -14,8 +13,7 @@ import (
 func initApplication() *application {
 	path, err := os.Getwd()
 	if err != nil {
-		fmt.Println("can't get directory")
-		os.Exit(1)
+		log.Fatal(err)
 	}
 
 	// init celeritas
@@ -31,13 +29,13 @@ func initApplication() *application {
 		App: cel,
 	}
 
-	myHandlers := handlers.Handlers{
+	myHandlers := &handlers.Handlers{
 		App: cel,
 	}
 
 	app := &application{
 		App:        cel,
-		Handlers:   &myHandlers,
+		Handlers:   myHandlers,
 		Middleware: myMiddleware,
 	}
 

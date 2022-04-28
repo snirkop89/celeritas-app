@@ -31,7 +31,7 @@ func (h *Handlers) sessionRenew(ctx context.Context) error {
 	return h.App.Session.RenewToken(ctx)
 }
 
-func (h *Handlers) sessionDestory(ctx context.Context) error {
+func (h *Handlers) sessionDestroy(ctx context.Context) error {
 	return h.App.Session.Destroy(ctx)
 }
 

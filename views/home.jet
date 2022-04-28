@@ -2,7 +2,6 @@
 
 {{block browserTitle()}}Welcome{{end}}
 
-
 {{block css()}}
 
 {{end}}
@@ -18,10 +17,10 @@
         </div>
     </div>
 
-    <hr>
-
 </div>
+
 {{end}}
+
 
 {{block js()}}
 
